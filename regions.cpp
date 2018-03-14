@@ -9,7 +9,7 @@ int main (int, char**){
   Vec3b val;
   int p1x, p1y, p2x, p2y;
 
-  image =  imread("saladca.png", CV_LOAD_IMAGE_COLOR);
+  image =  imread("img/saladca.png", CV_LOAD_IMAGE_COLOR);
 
   if(!image.data){
     cout << "imagem não encontrada" << endl;
@@ -43,7 +43,7 @@ int main (int, char**){
   }
 
   for (int i = p1y; i < p2y; i++){
-    for(int j = p1x; j< p2x; j++){
+    for(int j = p1x; j < p2x; j++){
       val = image.at<Vec3b>(i,j);
 
       val[0] = 255 - val[0];
