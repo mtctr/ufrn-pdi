@@ -15,11 +15,11 @@ int main(int argc, char** argv){
   bool uniform = true;
   bool acummulate = false;
 
-  image= imread("img/IMG_0904edit.jpg",CV_LOAD_IMAGE_GRAYSCALE);
+  image= imread("img/gabi.jpg",CV_LOAD_IMAGE_GRAYSCALE);
   if(!image.data){
     cout << "imagem não encontrada" << endl;
   } else{
-    resize(image, image, Size(720,480));
+    //resize(image, image, Size(720,480));
   }
 
   width  = image.cols;
@@ -44,10 +44,13 @@ int main(int argc, char** argv){
          Point(i, histh-cvRound(hist.at<float>(i))),
          Scalar(0), 1, 8, 0);
   }
-  
 
+  //histImg.copyTo(image(Rect(0, 0       ,nbins, histh)));
 
-  imshow("image", image);
+  equalizeHist(image, equalized);
+
+  imwrite("img/eq.jpg", equalized);
+  imshow("equalized", equalized);
   waitKey();
 
   return 0;
