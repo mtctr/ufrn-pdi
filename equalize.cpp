@@ -44,7 +44,7 @@ int main(int argc, char** argv){
          Point(i, histh-cvRound(hist.at<float>(i))),
          Scalar(0), 1, 8, 0);
   }
-  histImg.copyTo(image(Rect(0, 0 ,nbins, histh)));
+  
 
 
   imshow("image", image);

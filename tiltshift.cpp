@@ -30,6 +30,7 @@ void on_trackbar_blend(int,void*){
     addWeighted( image1.row(i), alfa, image2.row(i), 1-alfa, 0.0, blended.row(i));
  }
  imshow("tiltshift", blended);
+ imwrite("filtrada.jpg", blended);
 }
 
 
